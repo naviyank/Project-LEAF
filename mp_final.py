@@ -6,6 +6,31 @@ from colorama import init, Fore, Style
 
 init(autoreset=True)                                                                 # Initialize colorama to automatically reset colors after each use
 
+def pspy(commands7):
+    """
+    Runs the given commands in a new terminal window on Kali Linux.
+
+    Args:
+        commands (list): A list of commands to be executed.
+    """
+
+    try:
+        # Join the commands with '; ' to execute them in sequence
+        command_str = '; '.join(commands7)
+
+        # Open a new terminal window and execute the commands
+        process = subprocess.Popen(['x-terminal-emulator', '-e', f'bash -c "{command_str};echo Press Enter to close the window; read"'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        time.sleep(30)
+        # Wait for the process to terminate
+        process.wait()
+
+        print("Commands executed in a new terminal window.")
+    except subprocess.CalledProcessError as e:
+        print(f"Error running commands: {e}")
+
+# Example usage
+commands7 = ["sudo pspy --debug"]
+
 
 def install_sqlmap():
     try:
@@ -35,7 +60,7 @@ def theHarvester():
     print("\n\n\n")
     cm02 = list(command.split(" "))
     cm03 = cm01 + cm02
-    dpath = str(os.path.join(os.path.expanduser("~"), "Downloads/theHarvester"))
+    dpath = str(os.path.join(os.path.expanduser("~"), "Downloads/Project-LEAF/theHarvester"))
     subprocess.call(cm03 , cwd=dpath)
 
 
@@ -65,7 +90,7 @@ def Impacket():
     print("\n\n\n")
     cm02 = list(command.split(" "))
     cm03 = cm01 + cm02
-    dpath = str(os.path.join(os.path.expanduser("~"), "Downloads/impacket"))
+    dpath = str(os.path.join(os.path.expanduser("~"), "Downloads/Project-LEAF/impacket"))
     subprocess.call(cm03 , cwd=dpath)
 
 
@@ -96,21 +121,21 @@ def run_dirb():
 
 def Sherlock():
     uname = str(input("Please enter the username you want to search: \n\n\n"))
-    dpath = str(os.path.join(os.path.expanduser("~"), "Downloads/sherlock/sherlock"))
+    dpath = str(os.path.join(os.path.expanduser("~"), "Downloads/Project-LEAF/sherlock/sherlock"))
     subprocess.call(["python3", "sherlock.py", uname], cwd= dpath)
 
 
 
 
 def LinPEAS():
-    dpath = str(os.path.join(os.path.expanduser("~"), "Downloads/REDTeaming_Automation_Framework"))
+    dpath = str(os.path.join(os.path.expanduser("~"), "Downloads/Project-LEAF"))
     subprocess.call(["./linpeas.sh"], cwd= dpath)
 
 
 
 
 def LinEnum():
-    dpath = str(os.path.join(os.path.expanduser("~"), "Downloads/REDTeaming_Automation_Framework/Shell_Scripts/LinEnum"))
+    dpath = str(os.path.join(os.path.expanduser("~"), "Downloads/Project-LEAF/LinEnum"))
     subprocess.call(["./LinEnum.sh"], cwd= dpath)
 
 
@@ -127,7 +152,7 @@ def Nikto():
 
 
 
-def LSE(commands2):
+'''def LSE(commands2):
     try:
         command_str = '; '.join(commands2)
         process = subprocess.Popen(['x-terminal-emulator', '-e', f'bash -c "{command_str};echo Press Enter to close the window; read"'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -138,12 +163,14 @@ def LSE(commands2):
     except subprocess.CalledProcessError as e:
         print(f"Error running commands: {e}")
 
-commands2 = ["./lse.sh"]
+commands2 = ["./lse.sh"]'''
+
+def LSE():
+    dpath = str(os.path.join(os.path.expanduser("~"), "Downloads/Project-LEAF/linux-smart-enumeration"))
+    subprocess.call(["./lse.sh"], cwd= dpath)
 
 
-
-
-def LinuxES(commands1):
+'''def LinuxES(commands1):
     try:
         command_str = '; '.join(commands1)
         process = subprocess.Popen(['x-terminal-emulator', '-e', f'bash -c "{command_str};echo Press Enter to close the window; read"'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -154,9 +181,11 @@ def LinuxES(commands1):
     except subprocess.CalledProcessError as e:
         print(f"Error running commands: {e}")
 
-commands1 = ["./Linux-Exploit-Suggester.sh"]
+commands1 = ["./Linux-Exploit-Suggester.sh"]'''
 
-
+def LinuxES():
+    dpath = str(os.path.join(os.path.expanduser("~"), "Downloads/Project-LEAF/linux-exploit-suggester"))
+    subprocess.call(["./linux-exploit-suggester.sh"], cwd= dpath)
 
 
 def PVCheck():
@@ -173,7 +202,7 @@ def PVCheck():
 def Metasploit():
      LHOST = input("Enter the LHOST IP address: ")
      generate_bash_script(LHOST)
-     dpath = str(os.path.join(os.path.expanduser("~"), "Downloads"))
+     dpath = str(os.path.join(os.path.expanduser("~"), "Downloads/Project-LEAF"))
      cm01=["chmod","+x","generate_payload.sh"]
      subprocess.call(cm01, cwd=dpath)
      cm02=["./generate_payload.sh"]
@@ -257,15 +286,13 @@ def netcat(commands5):
 commands5 = ["sudo nc -lvnp 87 -s " + ip_address]
 
 
-
-
 def Dirsearch():
     cm01 = ["python3", "dirsearch.py"]
     command = str(input("Please enter the specifications you want: "))
     print("\n\n\n")
     cm02 = list(command.split(" "))
     cm03 = cm01 + cm02
-    dpath = str(os.path.join(os.path.expanduser("~"), "Downloads/dirsearch"))
+    dpath = str(os.path.join(os.path.expanduser("~"), "Downloads/Project-LEAF/dirsearch"))
     subprocess.call(cm03 , cwd=dpath)
 
 
@@ -295,7 +322,8 @@ def print_menu():
         ("14.",  "Network/Port Scanning"),
         ("15.",  "Create a Backdoor"),
         ("16.",  "Find Hidden Web Directories"),
-        ("17.",  "Exit")
+        ("17.",  "Process Monitoring"),
+        ("18.",  "Exit")
     ]
     for item in menu_items:
         print("| {:<2} | {:<43} |".format(bright_yellow + item[0], item[1]))
@@ -327,7 +355,7 @@ def main_menu():
                     print(Fore.CYAN + "Once the new terminal window opens up, after waiting for a few seconds, please type out the following commands to activate the tool:\n\n1. cd Downloads\n\n2. python sfcli.py -s 127.0.0.1:5001\n\n")
                     command="x-terminal-emulator"
                     subprocess.Popen(command)
-                    dpath = str(os.path.join(os.path.expanduser("~"), "Downloads/spiderfoot"))
+                    dpath = str(os.path.join(os.path.expanduser("~"), "Downloads/Project-LEAF/spiderfoot"))
                     subprocess.call(["python3", "sf.py", "-l", "127.0.0.1:5001"], cwd= dpath)
 
                 elif tool_choice == '2':
@@ -373,11 +401,11 @@ def main_menu():
 
             elif choice == 9:
                 print(Fore.CYAN + "Running Linux Smart Enumeration...")
-                LSE(commands2)
+                LSE()
 
             elif choice == 10:
                 print(Fore.CYAN + "Running Linux Exploit Suggester...")
-                LinuxES(commands1)
+                LinuxES()
 
             elif choice == 11:
                 print(Fore.CYAN + "Running Unix Privesc Check...")
@@ -402,8 +430,12 @@ def main_menu():
             elif choice == 16:
                 print(Fore.CYAN + "Running Dirsearch...")
                 Dirsearch()
-
+                
             elif choice == 17:
+                print(Fore.CYAN + "Running Pspy...")
+                pspy(commands7)
+
+            elif choice == 18:
                 print(Fore.GREEN + "Thank you for using our program!!")
                 break
         else:

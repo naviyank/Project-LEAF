@@ -29,7 +29,7 @@ scripts=( script1_metasploit
     script7_Bettercap
     script8_Impacket
     script9_Dirb
-    #script10_Sherlock
+    script10_Sherlock
     script11_Spiderfoot
     script12_theHarvester
     script13_Linux_Exploit_Suggester
