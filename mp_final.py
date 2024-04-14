@@ -352,7 +352,7 @@ def main_menu():
 
                 if tool_choice == '1':
                     print(Fore.CYAN + "Running Spiderfoot...")
-                    print(Fore.CYAN + "Once the new terminal window opens up, after waiting for a few seconds, please type out the following commands to activate the tool:\n\n1. cd Downloads\n\n2. python sfcli.py -s 127.0.0.1:5001\n\n")
+                    print(Fore.CYAN + "Once the new terminal window opens up, after waiting for a few seconds, please type out the following commands to activate the tool:\n\n1. cd spiderfoot\n\n2. python3 sfcli.py -s 127.0.0.1:5001\n\n")
                     command="x-terminal-emulator"
                     subprocess.Popen(command)
                     dpath = str(os.path.join(os.path.expanduser("~"), "Downloads/Project-LEAF/spiderfoot"))
