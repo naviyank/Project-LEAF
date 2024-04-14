@@ -9,8 +9,15 @@ The following tools are available:
 
 Installing
 --
+Instructions for user:
+1. Clone this repository to the Downloads directory of your device
+3. Navigate to the Shell_Scripts directory and run
+    ``` sudo chmod +x *.sh ```
+4. Come back to the main directory by running
+    ``` cd .. ```
+6. Run
+   ``` sudo chmod +x control.sh ```
 
-Generally, 
 
 Using Project-LEAF
 --
