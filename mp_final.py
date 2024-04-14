@@ -162,66 +162,35 @@ def LinEnum():
 
 
 def Nikto():
-    subprocess.call(["nikto","-h"])
-    cm01 = ["nikto","-h"]
+    dpath = str(os.path.join(os.path.expanduser("~"), "Downloads/Project-LEAF/nikto/program"))
+    cm01 = ["./nikto.pl","-h"]
     command = str(input("Please enter the specifications you want: "))
     print("\n\n\n")
     cm02 = list(command.split(" "))
     cm03 = ["-o","result.txt"]
     cm04 = cm01 + cm02 + cm03
-    subprocess.call(cm04)
+    subprocess.call(cm04, cwd=dpath)
 
 
-
-
-'''def LSE(commands2):
-    try:
-        command_str = '; '.join(commands2)
-        process = subprocess.Popen(['x-terminal-emulator', '-e', f'bash -c "{command_str};echo Press Enter to close the window; read"'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        time.sleep(30)
-        process.wait()
-        print("Commands executed in a new terminal window.")
-
-    except subprocess.CalledProcessError as e:
-        print(f"Error running commands: {e}")
-
-commands2 = ["./lse.sh"]'''
 
 def LSE():
     dpath = str(os.path.join(os.path.expanduser("~"), "Downloads/Project-LEAF/linux-smart-enumeration"))
     subprocess.call(["./lse.sh"], cwd= dpath)
 
 
-'''def LinuxES(commands1):
-    try:
-        command_str = '; '.join(commands1)
-        process = subprocess.Popen(['x-terminal-emulator', '-e', f'bash -c "{command_str};echo Press Enter to close the window; read"'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        time.sleep(30)
-        process.wait()
-        print("Commands executed in a new terminal window.")
 
-    except subprocess.CalledProcessError as e:
-        print(f"Error running commands: {e}")
-
-commands1 = ["./Linux-Exploit-Suggester.sh"]'''
 
 def LinuxES():
     dpath = str(os.path.join(os.path.expanduser("~"), "Downloads/Project-LEAF/linux-exploit-suggester"))
     subprocess.call(["./linux-exploit-suggester.sh"], cwd= dpath)
 
 
-'''def PVCheck():
-    cm01 = ["unix-privesc-check"]
-    command = str(input("Please enter the specifications you want{ standard | detailed } with IP address: "))
-    print("\n\n\n")
-    cm02 = list(command.split(" "))
-    cm03 = cm01 + cm02
-    subprocess.call(cm03)'''
+
     
 def PVCheck():
     ipupc=input("Enter IP Address of Machine you wish to target: ")
     dpath = str(os.path.join(os.path.expanduser("~"), "Downloads/Project-LEAF"))
-    subprocess.call(["sudo","./unix-privesc-check.sh","standard",ipupc], cwd= dpath)
+    subprocess.call(["./unix-privesc-check.sh","standard",ipupc], cwd= dpath)
 
 def Metasploit():
      LHOST = input("Enter the LHOST IP address: ")
@@ -369,20 +338,6 @@ def main_menu():
                 run_sqlmap(url)
 
             elif choice == 2:
-                print(Fore.CYAN + "Choose from the following tools")
-                print("1. Spiderfoot (default)")
-                print("2. theHarvester")
-                tool_choice = input(Fore.CYAN + "Enter the tool number:")
-
-                if tool_choice == '1':
-                    print(Fore.CYAN + "Running Spiderfoot...")
-                    print(Fore.CYAN + "Once the new terminal window opens up, after waiting for a few seconds, please type out the following commands to activate the tool:\n\n1. cd spiderfoot\n\n2. python3 sfcli.py -s 127.0.0.1:5001\n\n")
-                    command="x-terminal-emulator"
-                    subprocess.Popen(command)
-                    dpath = str(os.path.join(os.path.expanduser("~"), "Downloads/Project-LEAF/spiderfoot"))
-                    subprocess.call(["python3", "sf.py", "-l", "127.0.0.1:5001"], cwd= dpath)
-
-                elif tool_choice == '2':
                     print(Fore.CYAN + "Running theHarvester...")
                     theHarvester()
 
