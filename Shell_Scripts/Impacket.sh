@@ -6,4 +6,3 @@ cd impacket
 sudo apt install python3 python3-pip
 # Install Impacket
 sudo python3 setup.py install
-sudo apt install smbclient
