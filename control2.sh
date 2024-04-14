@@ -1,7 +1,7 @@
 # Add paths to all your shell scripts
 script1_metasploit=Shell_Scripts/Metasploit.sh
 script2_nikto=Shell_Scripts/Nikto.sh
-#script3_unix_privesc_check=Shell_Scripts/Unix_Privesc_Check.sh
+script3_unix_privesc_check=Shell_Scripts/Unix_Privesc_Check.sh
 script4_LinEnum=Shell_Scripts/LinEnum.sh
 script5_sql=Shell_Scripts/sql.sh
 script6_LinPEAS=Shell_Scripts/LinPEAS.sh
@@ -22,7 +22,7 @@ script19_dirsearch=Shell_Scripts/dirsearch.sh
 # Array of script variables
 scripts=( script1_metasploit
     script2_nikto
-    #script3_unix_privesc_check
+    script3_unix_privesc_check
     script4_LinEnum
     script5_sql
     script6_LinPEAS
