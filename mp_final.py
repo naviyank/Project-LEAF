@@ -220,7 +220,7 @@ def LinuxES():
     
 def PVCheck():
     dpath = str(os.path.join(os.path.expanduser("~"), "Downloads/Project-LEAF"))
-    subprocess.call(["./unix-privesc-check.sh","standard",ip_address], cwd= dpath)
+    subprocess.call(["sudo","./unix-privesc-check.sh","standard",ip_address], cwd= dpath)
 
 def Metasploit():
      LHOST = input("Enter the LHOST IP address: ")
