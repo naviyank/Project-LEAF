@@ -219,8 +219,9 @@ def LinuxES():
     subprocess.call(cm03)'''
     
 def PVCheck():
+    ipupc=input("Enter IP Address of Machine you wish to target: ")
     dpath = str(os.path.join(os.path.expanduser("~"), "Downloads/Project-LEAF"))
-    subprocess.call(["sudo","./unix-privesc-check.sh","standard",ip_address], cwd= dpath)
+    subprocess.call(["sudo","./unix-privesc-check.sh","standard",ipupc], cwd= dpath)
 
 def Metasploit():
      LHOST = input("Enter the LHOST IP address: ")
