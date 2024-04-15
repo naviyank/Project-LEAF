@@ -6,3 +6,4 @@ cd linux-exploit-suggester
 #ls
 # Make the Linux-Exploit-Suggester.sh script executable
 #chmod +x .linux-exploit-suggester.sh
+
