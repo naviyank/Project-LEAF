@@ -1,2 +1,2 @@
 # Clone Nikto repository
-sudo apt install nikto
+git clone https://github.com/sullo/nikto.git
