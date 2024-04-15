@@ -26,31 +26,6 @@ def generate_bash_script(LHOST):
         
         print("Bash script 'generate_payload.sh' has been created.")
 
-def pspy(commands7):
-    """
-    Runs the given commands in a new terminal window on Kali Linux.
-
-    Args:
-        commands (list): A list of commands to be executed.
-    """
-
-    try:
-        # Join the commands with '; ' to execute them in sequence
-        command_str = '; '.join(commands7)
-
-        # Open a new terminal window and execute the commands
-        process = subprocess.Popen(['x-terminal-emulator', '-e', f'bash -c "{command_str};echo Press Enter to close the window; read"'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        time.sleep(30)
-        # Wait for the process to terminate
-        process.wait()
-
-        print("Commands executed in a new terminal window.")
-    except subprocess.CalledProcessError as e:
-        print(f"Error running commands: {e}")
-
-# Example usage
-commands7 = ["sudo pspy --debug"]
-
 
 def install_sqlmap():
     try:
@@ -314,8 +289,7 @@ def print_menu():
         ("14.",  "Network/Port Scanning"),
         ("15.",  "Create a Backdoor"),
         ("16.",  "Find Hidden Web Directories"),
-        ("17.",  "Process Monitoring"),
-        ("18.",  "Exit")
+        ("17.",  "Exit")
     ]
     for item in menu_items:
         print("| {:<2} | {:<43} |".format(bright_yellow + item[0], item[1]))
@@ -409,11 +383,8 @@ def main_menu():
                 print(Fore.CYAN + "Running Dirsearch...")
                 Dirsearch()
                 
-            elif choice == 17:
-                print(Fore.CYAN + "Running Pspy...")
-                pspy(commands7)
 
-            elif choice == 18:
+            elif choice == 17:
                 print(Fore.GREEN + "Thank you for using our program!!")
                 break
         else:
