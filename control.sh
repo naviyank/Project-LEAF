@@ -8,7 +8,6 @@ script7_Bettercap=Shell_Scripts/Bettercap.sh
 script8_Impacket=Shell_Scripts/Impacket.sh
 script9_Dirb=Shell_Scripts/Dirb.sh
 script10_Sherlock=Shell_Scripts/Sherlock.sh
-script11_Spiderfoot=Shell_Scripts/Spiderfoot.sh
 script12_theHarvester=Shell_Scripts/theHarvester.sh
 script13_Linux_Exploit_Suggester=Shell_Scripts/LES.sh
 script14_Linux_Smart_Enumeration=Shell_Scripts/lse.sh
@@ -26,7 +25,6 @@ scripts=( script1_metasploit
     script8_Impacket
     script9_Dirb
     script10_Sherlock
-    script11_Spiderfoot
     script12_theHarvester
     script13_Linux_Exploit_Suggester
     script14_Linux_Smart_Enumeration
